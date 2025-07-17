@@ -439,7 +439,7 @@ This methodology accommodates two distinct reimbursement pathways based on distr
 
 ### Q: What if an evaluation spans multiple school years?
 
-**A:** The reimbursement is tied to the school year in which the evaluation is completed, as indicated by the INITIAL_EVALUATION_DATE in the Child Find system.
+**A:** The reimbursement is tied to the school year in which the eligibility determination occurs even if the initial evaluation (**`INITIAL_EVALUATION_DATE`**) was completed during the prior school year (holdover students).
 
 -----
 
