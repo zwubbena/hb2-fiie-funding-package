@@ -29,7 +29,7 @@ This methodology produces a complete funding pipeline that calculates reimbursem
 
 ### 🧮 Data Source
 
-**Primary Data Source**: Oracle Child Find Student Program View (v_cf_stu_program_view)
+**Primary Data Source**: Oracle Database (Program View: **`v_cf_stu_program_view`**)
 - **School Year:** 2023-2024
 - **Federal Data Collection Period:** July 1 - June 30
 - **Deadline:** July 25, 2024 (Last Thursday in July)
