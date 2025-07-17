@@ -30,9 +30,9 @@ This methodology produces a complete funding pipeline that calculates reimbursem
 ### 🧮 Data Source
 
 **Primary Data Source**: Oracle Child Find Student Program View (v_cf_stu_program_view)
-- School Year: 2024-2025
-- Data Elements: Initial evaluation dates and student identifiers
-- Processing Date: July 16, 2025
+- **School Year:** 2023-2024
+- **Federal Data Collection Period:** July 1 - June 30
+- **Deadline:** July 25, 2024 (Last Thursday in July)
 
 **Secondary Data Source**: Fiscal Agent and SSA Membership Data
 - Excel file containing fiscal agent assignments and SSA membership flags
@@ -40,11 +40,11 @@ This methodology produces a complete funding pipeline that calculates reimbursem
 
 #### 📅 Data Collection Timeline
 
-| School Year | Data Collection Period | Processing Date | Expected Distribution |
-|-------------|------------------------|-----------------|----------------------|
-| 2024-25     | Full School Year      | July 2025       | TBD                  |
-| 2025-26     | Full School Year      | July 2026       | TBD                  |
-| 2026-27     | Full School Year      | July 2027       | TBD                  |
+| School Year | Data Collection Period | Processing Date <br>(Last Thursday in July) | Expected Distribution |
+|-------------|------------------------|--------------------|----------------------|
+| 2023-24     | 7/1/2023 - 6/30/2024      | July 2024       | TBD                  |
+| 2025-26     | 7/1/2024 - 6/30/2025      | July 2026       | TBD                  |
+| 2026-27     | 7/1/2025 - 6/30/2026      | July 2027       | TBD                  |
 
 #### 📋 Timeline Notes
 
