@@ -15,7 +15,7 @@ The FIIE reimbursement program provides financial support to Texas school distri
 
 The FIIE reimbursement program under [HB 2 TEC §48.159](https://capitol.texas.gov/tlodocs/89R/billtext/pdf/HB00002F.pdf) supports Texas public school districts in meeting their obligations for conducting initial evaluations under the Individuals with Disabilities Education Act (IDEA).
 
-> ** SECTION 4.59. Subchapter D, Chapter 48, Education Code, is
+> **SECTION 4.59. Subchapter D, Chapter 48, Education Code, is
 amended by adding Section 48.159 to read as follows:**
 > 
 > **Sec. 48.159. SPECIAL EDUCATION FULL INDIVIDUAL AND INITIAL
@@ -142,7 +142,6 @@ run;
 NOTE: The data set WORK.BASE_NODUP has 184,894 observations and 11 variables.
 NOTE: The data set WORK.BASE_DUP has 3,376 observations and 11 variables.
 ```
-
 -----
 
 ### Step 3: Funding Responsibility Classification
@@ -187,6 +186,15 @@ NOTE: Data sets WORK.BASE_INDEPENDENT and WORK.BASE_FISCAL_AGENT created.
 #### 📘 Calculation Requirement
 
 Aggregate evaluation counts by fiscal agent and calculate total reimbursement at $1,000 per evaluation.
+
+#### Formula:
+
+![Reimbursement per Fiscal Agent](https://latex.codecogs.com/svg.latex?R_{fa}%3D1000%5Csum_{d=1}^{n_{fa}}e_{d})
+
+**Where**  
+- $R_{fa}$ = Total reimbursement for fiscal agent $fa$ (in dollars)  
+- $n_{fa}$ = Number of districts served by fiscal agent $fa$  
+- $e_{d}$ = Number of initial evaluations conducted in district $d$ under fiscal agent $fa$
 
 #### 💻 SAS Code
 
@@ -236,6 +244,14 @@ NOTE: Table WORK.FISCAL_AGENT_SUMMARY created, with 109 rows and 6 columns.
 #### 📘 Calculation Requirement
 
 Calculate reimbursement amounts for independent districts based on their evaluation counts.
+
+#### Formula:
+
+![Independent District Reimbursement](https://latex.codecogs.com/svg.latex?R_{d}%3D1000%5Ctimes%20E_{d})
+
+**Where**  
+- $R_{d}$ = Direct reimbursement amount for independent district $d$ (in USD)  
+- $E_{d}$ = Number of completed initial evaluations in district $d$
 
 #### 💻 SAS Code
 
@@ -321,7 +337,23 @@ NOTE: The data set WORK.COMBINED_SUMMARY has 727 observations and 6 variables.
 
 #### 📘 Calculation Requirement
 
-Calculate statewide metrics including total reimbursement amounts, record counts, and evaluation counts, with breakdowns by funding responsibility type.
+Calculate statewide metrics including total reimbursement amounts, record counts, and initial evaluation counts, with breakdowns by funding responsibility type.
+
+#### Formula:
+
+![Total FIIE Reimbursement](https://latex.codecogs.com/svg.latex?R_%7B%5Cmathrm%7Btotal%7D%7D%3D%5Csum_%7Bi%3D1%7D%5E%7BN%7Dr_%7Bi%7D)
+
+![Independent District Reimbursement](https://latex.codecogs.com/svg.latex?R_%7B%5Cmathrm%7Bind%7D%7D%3D%5Csum_%7B%5Csubstack%7Bi%3D1%5C%5Cf_%7Bi%7D%3D%5Cmathrm%7BINDEPENDENT%7D%7D%7D%5E%7BN%7Dr_%7Bi%7D)
+
+![Fiscal Agent Reimbursement](https://latex.codecogs.com/svg.latex?R_%7B%5Cmathrm%7Bfa%7D%7D%3D%5Csum_%7B%5Csubstack%7Bi%3D1%5C%5Cf_%7Bi%7D%3D%5Cmathrm%7BFISCAL%5C%20AGENT%7D%7D%7D%5E%7BN%7Dr_%7Bi%7D)
+
+**Where**  
+- $R_{\mathrm{total}}$ = Total FIIE reimbursement amount (all records)  
+- $R_{\mathrm{ind}}$   = Total FIIE reimbursement for independent districts (`FUNDING_RESPONSIBILITY = INDEPENDENT`)  
+- $R_{\mathrm{fa}}$    = Total FIIE reimbursement for fiscal agent districts (`FUNDING_RESPONSIBILITY = FISCAL AGENT`)  
+- $r_{i}$             = value of `TOTAL_FIIE_REIMBURSEMENT` for record $i$  
+- $f_{i}$             = value of `FUNDING_RESPONSIBILITY` for record $i$  
+- $N$                 = total number of records in `combined_summary`  
 
 #### 💻 SAS Code
 
@@ -422,13 +454,13 @@ This methodology accommodates two distinct reimbursement pathways based on distr
 
 ## ❓ Frequently Asked Questions (FAQ)
 
-### Q: What qualifies as an "initial evaluation" for reimbursement purposes?
+### Q: What qualifies as an initial evaluation for reimbursement purposes?
 
-**A:** An initial evaluation is the first comprehensive assessment conducted to determine if a student qualifies for special education services under IDEA. The evaluation must be completed and recorded in the Child Find system with a valid evaluation date.
+**A:** An initial evaluation is the first comprehensive individual assessment conducted to determine if a children qualifies for special education services under IDEA. The initial evaluation must be completed and recorded with a valid initial evaluation date in the Texas Student Data System (TSDS).
 
-### Q: How are evaluations handled when a student moves between districts?
+### Q: How are initial evaluations handled when a student moves between districts?
 
-**A:** The district that completed the evaluation receives the reimbursement. If multiple districts have evaluation records for the same student, only the most recent evaluation qualifies for reimbursement based on the deduplication rules.
+**A:** The district that completed the eligibility determination receives the reimbursement. If multiple districts have evaluation records for the same student, only the most recent evaluation and eligibility determination qualifies for reimbursement based on the deduplication rules.
 
 ### Q: When do districts receive their FIIE reimbursements?
 
@@ -436,7 +468,7 @@ This methodology accommodates two distinct reimbursement pathways based on distr
 
 ### Q: How does the fiscal agent model work for SSAs?
 
-**A:** In an SSA, member districts conduct evaluations but the fiscal agent receives the consolidated reimbursement. The fiscal agent is then responsible for distributing funds to member districts according to their SSA agreement.
+**A:** In an SSA, member districts conduct initial evaluations but the fiscal agent receives the consolidated reimbursement. The fiscal agent is then responsible for distributing funds to member districts according to their SSA agreement.
 
 ### Q: Can a district receive multiple reimbursements for the same student?
 
@@ -444,7 +476,7 @@ This methodology accommodates two distinct reimbursement pathways based on distr
 
 ### Q: What if an evaluation spans multiple school years?
 
-**A:** The reimbursement is tied to the school year in which the eligibility determination occurs even if the initial evaluation (**`INITIAL_EVALUATION_DATE`**) was completed during the prior school year (holdover students).
+**A:** The reimbursement is tied to the school year in which the eligibility determination occurs even if the initial evaluation (**`INITIAL_EVALUATION_DATE`**) was completed during a prior school year. This scenario is referred to as “holdover students.”
 
 -----
 
