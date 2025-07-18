@@ -63,7 +63,7 @@ This methodology produces a complete funding pipeline that calculates reimbursem
 
 #### 📜 Business Rule
 **BR-001: Child Find Data Source Requirements**
-> Initial evaluation data must be extracted from the Oracle Child Find Student Program View, which serves as the authoritative source for special education evaluation records in Texas.
+> Initial evaluation data must be extracted from the Oracle database program view in Oracle, which serves as the authoritative source for initial evaluation records in Texas.
 
 #### 📘 Calculation Requirement
 
@@ -110,7 +110,7 @@ NOTE: Table WORK.BASE created, with 188,270 rows and 11 columns.
 
 #### 📜 Business Rule
 **BR-002: Student Record Deduplication Rules**
-> When multiple evaluation records exist for the same student within a district, only the most recent evaluation (highest **`INITIAL_EVALUATION_DATE`**) qualifies for reimbursement. This prevents duplicate reimbursement claims for the same student.
+> When multiple initial evaluation records exist for the same student within a district, only the most recent initial evaluation (highest **`INITIAL_EVALUATION_DATE`**) qualifies for reimbursement. This prevents duplicate reimbursement claims for the same student.
 
 #### 📘 Calculation Requirement
 
@@ -185,7 +185,7 @@ NOTE: Data sets WORK.BASE_INDEPENDENT and WORK.BASE_FISCAL_AGENT created.
 
 #### 📘 Calculation Requirement
 
-Aggregate evaluation counts by fiscal agent and calculate total reimbursement at $1,000 per evaluation.
+Aggregate initial evaluation counts by fiscal agent and calculate total reimbursement at $1,000 per evaluation.
 
 #### Formula:
 
@@ -243,7 +243,7 @@ NOTE: Table WORK.FISCAL_AGENT_SUMMARY created, with 109 rows and 6 columns.
 
 #### 📘 Calculation Requirement
 
-Calculate reimbursement amounts for independent districts based on their evaluation counts.
+Calculate reimbursement amounts for independent districts based on their initial evaluation counts.
 
 #### Formula:
 
@@ -409,7 +409,7 @@ NOTE: Table WORK.STATEWIDE_SUMMARY created, with 9 rows and 2 columns.
 
 The FIIE reimbursement calculation methodology is governed by seven key business rules:
 
-1. **BR-001**: Child Find data source requirements for evaluation records
+1. **BR-001**: Child Find data source requirements for initial evaluation records
 2. **BR-002**: Student record deduplication to prevent duplicate claims
 3. **BR-003**: Funding responsibility assignment (Independent vs Fiscal Agent)
 4. **BR-004**: Fiscal agent reimbursement consolidation for SSA members
@@ -435,7 +435,7 @@ This methodology accommodates two distinct reimbursement pathways based on distr
 
 ### Key Program Metrics (2024-25)
 
-**Evaluation Activity:**
+**Initial Evaluation Activity:**
 - Total Initial Evaluations Completed: 184,894
 - Duplicate Records Removed: 3,376
 - Net Evaluations for Reimbursement: 184,894
@@ -460,7 +460,7 @@ This methodology accommodates two distinct reimbursement pathways based on distr
 
 ### Q: How are initial evaluations handled when a student moves between districts?
 
-**A:** The district that completed the eligibility determination receives the reimbursement. If multiple districts have evaluation records for the same student, only the most recent evaluation and eligibility determination qualifies for reimbursement based on the deduplication rules.
+**A:** The district that completed the eligibility determination receives the reimbursement. If multiple districts have initial evaluation records for the same student, only the most recent initial evaluation and eligibility determination qualifies for reimbursement based on the deduplication rules.
 
 ### Q: When do districts receive their FIIE reimbursements?
 
@@ -472,7 +472,7 @@ This methodology accommodates two distinct reimbursement pathways based on distr
 
 ### Q: Can a district receive multiple reimbursements for the same student?
 
-**A:** No. The deduplication process ensures each student is counted only once per district, even if multiple evaluation records exist. Only the most recent evaluation date is used for reimbursement.
+**A:** No. The deduplication process ensures each student is counted only once per district, even if multiple initial evaluation records exist. Only the most recent initial evaluation date is used for reimbursement.
 
 ### Q: What if an evaluation spans multiple school years?
 
