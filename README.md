@@ -59,7 +59,7 @@ This methodology produces a complete funding pipeline that calculates reimbursem
 
 -----
 
-### Step 1: Child Find Data Extraction
+### Step 1: Data Extraction
 
 #### 📜 Business Rule
 **BR-001: Child Find Data Source Requirements**
