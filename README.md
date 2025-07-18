@@ -5,7 +5,7 @@
 This document outlines the step-by-step process for calculating the full individual and initial evaluation (FIIE) reimbursement allotment for local educational agencies (LEAs) in Texas. This reimbursement mechanism established by [Texas House Bill (HB) 2, 89th Legislature, Regular Session (2025)](https://www.legis.state.tx.us/BillLookup/Actions.aspx?LegSess=89R&Bill=HB2) provides LEAs with $1,000 per completed initial evaluation of a child for special education eligibility.
 
 > [!IMPORTANT]
-> The method is organized in a clear flow from **legislative authority** → **business rule** → **calculation requirement** → **SAS code** → **results**.
+>  The funding pipeline documentation is organized in a clear flow from **legislative authority** → **business rule** → **calculation requirement** → **SAS code** → **results**.
 
 ## 🏫 Full Individual Initial Evaluation (FIIE) Program
 
@@ -36,7 +36,7 @@ The method outlines a complete funding pipeline that calculates reimbursements a
 
 **Primary Data Source**: Oracle Database (Program View: **`v_cf_stu_program_view`**)
 - **School Year:** 2023-2024
-- **Federal Data Collection Period:** July 1 - June 30
+- **Federal Data Collection Period:** July 1, 2023 - June 30, 2024
 - **Deadline:** July 25, 2024 (Last Thursday in July)
 
 **Secondary Data Source**: Fiscal Agent and SSA Membership Data
@@ -45,11 +45,14 @@ The method outlines a complete funding pipeline that calculates reimbursements a
 
 #### 📅 Data Collection Timeline
 
-| School Year | Data Collection Period | Processing Date <br>(Last Thursday in July) | Expected Distribution |
-|-------------|------------------------|--------------------|----------------------|
-| 2023-24     | 7/1/2023 - 6/30/2024      | July 2024       | TBD                  |
-| 2025-26     | 7/1/2024 - 6/30/2025      | July 2026       | TBD                  |
-| 2026-27     | 7/1/2025 - 6/30/2026      | July 2027       | TBD                  |
+| School Year | Data Collection Period | Data Submission Deadline Date <br>(Last Thursday in July) | Data Avalibility Date<br>(10 Business Days from Deadline) | Expected Distribution |
+|-------------|------------------------|--------------------|----------------------|----------------------|
+| 2023-24     | 7/1/2023 - 6/30/2024      | 7/25/2024       | 8/8/2024       | TBD                  |
+| 2024-25     | 7/1/2024 - 6/30/2025      | 7/31/2025       | 8/14/2025      | TBD                  |                  
+| 2025-26     | 7/1/2025 - 6/30/2026      | 7/30/2026       | 8/13/2026      | TBD                  |                  
+| 2026-27     | 7/1/2026 - 6/30/2027      | 7/29/2027       | 8/12/2027      | TBD                  |                  
+| 2027-28     | 7/1/2027 - 6/30/2028      | 7/27/2028       | 8/10/2028      | TBD                  |                  
+| 2028-29     | 7/1/2028 - 6/30/2029      | 7/26/2029       | 8/9/2029       | TBD                  |                  
 
 #### 📋 Timeline Notes
 
