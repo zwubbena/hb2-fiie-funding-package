@@ -5,7 +5,7 @@
 This document outlines the step-by-step process for calculating the full individual and initial evaluation (FIIE) reimbursement allotment for local educational agencies (LEAs) in Texas. This reimbursement mechanism established by [Texas House Bill (HB) 2, 89th Legislature, Regular Session (2025)](https://www.legis.state.tx.us/BillLookup/Actions.aspx?LegSess=89R&Bill=HB2) provides LEAs with $1,000 per completed initial evaluation of a child for special education eligibility.
 
 > [!IMPORTANT]
-> Each step in this method is organized to create a clear flow from **legislative authority** → **business rule** → **calculation requirement** → **SAS code** → **results**.
+> The method is organized in a clear flow from **legislative authority** → **business rule** → **calculation requirement** → **SAS code** → **results**.
 
 ## 🏫 Full Individual Initial Evaluation (FIIE) Program
 
