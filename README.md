@@ -13,13 +13,18 @@ The FIIE reimbursement program provides financial support to Texas school distri
 
 ## 📜 Legislative Foundation
 
-The FIIE reimbursement program supports Texas school districts in meeting their obligations under the Individuals with Disabilities Education Act (IDEA) and Texas Education Code requirements for timely and comprehensive special education evaluations.
+The FIIE reimbursement program under [HB 2 TEC §48.159](https://capitol.texas.gov/tlodocs/89R/billtext/pdf/HB00002F.pdf) supports Texas public school districts in meeting their obligations for conducting initial evaluations under the Individuals with Disabilities Education Act (IDEA).
 
-> **Key Program Parameters**
->
-> - **Reimbursement Rate**: $1,000 per completed initial evaluation
-> - **Eligible Evaluations**: Initial evaluations completed during the school year as recorded in the Child Find system
-> - **Funding Structure**: Districts receive reimbursement either independently or through their fiscal agent in SSA arrangements
+> ** SECTION 4.59. Subchapter D, Chapter 48, Education Code, is
+amended by adding Section 48.159 to read as follows:**
+> 
+> **Sec. 48.159. SPECIAL EDUCATION FULL INDIVIDUAL AND INITIAL
+EVALUATION.** For each child for whom a **school district conducts a
+full individual and initial evaluation** under Section 29.004 or 20
+U.S.C. Section 1414(a)(1), the district is entitled to an **allotment
+of $1,000 or a greater** amount provided by appropriation.
+
+HB 2 was signed by the Governor, Greg Abbott, on June 20, 2025 ([Journal Page 7610](https://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY81FINAL.PDF#page=30))
 
 ## 🎯 Method
 
